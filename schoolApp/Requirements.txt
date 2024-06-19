@@ -1,0 +1,26 @@
+Created a folder SchoolAppProject
+django-admin startproject schoolApp
+cd schoolApp
+python manage.py runserver
+workon virtual environment 
+
+Username (leave blank to use 'raji'): admin
+Email address: admin@teamWellingtonQ2.com
+Password: admin@123
+Password (again): admin@123
+The password is too similar to the username.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+
+
+python manage.py startapp school
+
+
+In Settings. py added school in INSTALLED_APPS
+
+
+inside school folder created templates folder under that school folder
+templates/school 
+
+
+
