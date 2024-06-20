@@ -4,7 +4,7 @@ from .import views
 app_name = 'movies'
 
 urlpatterns = [
-    path('', views.home, name='home'),    
+    path('', views.Home.as_view(), name='home'),    
 ]
 
 
