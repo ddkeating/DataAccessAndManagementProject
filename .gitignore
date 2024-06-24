@@ -1,0 +1,5 @@
+env
+*.pyc
+/schoolApp/school/migrations
+/schoolApp/school/migrations
+*.pyc

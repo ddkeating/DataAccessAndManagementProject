@@ -1,1 +1,44 @@
-<h1>HI</h1>
+<!--Home Page - Requires search filter, item filter-->
+{% extends 'base.html' %} {% block content %}
+<div class="home-container">
+	<div class="home-header">
+		<h2>Welcome to Wellington School</h2>
+		<p>
+			This sites purpose is to help provide information for students interested
+			in following their studies and pursing information about historical
+			figures and events.
+		</p>
+	</div>
+	<div id="articles" class="article-container">
+		<div class="result-controls">
+			<h1>Our Articles</h1>
+			<div>
+				<form class="search-bar">
+					<input
+						type="text"
+						name="search_query"
+						placeholder="Search for articles..."
+						aria-label="Search for articles..."
+					/>
+					<button type="submit">
+						<i class="fas fa-search"></i>
+					</button>
+				</form>
+				<div class="filter-container">
+					<i class="fas fa-filter"></i>
+				</div>
+			</div>
+		</div>
+
+		{% for article in articles %}
+		<div class="article-card">
+			<div class="article-content">
+				<h3>{{ article.title }}</h3>
+				<p>{{ article.content }}</p>
+				<a href="{% url 'article' article.id %}">Read More</a>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
