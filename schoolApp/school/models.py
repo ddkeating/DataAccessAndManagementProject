@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+class Category(models.Model):
+    name = models.CharField(max_length=250, unique= True) 
+
 class Article(models.Model):
     
     category = models.ForeignKey(Category, on_delete=models.CASCADE)

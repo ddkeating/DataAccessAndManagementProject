@@ -24,3 +24,57 @@ templates/school
 
 
 
+/* How to connect Database:
+pip install mysqlclient 
+
+or
+
+pip install mysql-connector-python
+
+Setting.py:
+----------
+
+DATABASES = {
+    'default': {
+        "ENGINE": "django.db.backends.mysql",
+        'NAME': "schoolappdatabase",
+        "USER": "root",
+        "PASSWORD": "Your password",
+        "HOST": "127.0.0.1",
+        "PORT": "3306",
+    }
+}
+
+
+
+schoolApp>mysql -u root -p
+Enter password: ***************
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 37
+
+mysql> show databases;
+
+mysql> use schoolappdatabase;
+mysql> show tables;
+mysql> show tables;
++-----------------------------+
+| Tables_in_schoolappdatabase |
++-----------------------------+
+| article                     |
+| auth_group                  |
+| auth_group_permissions      |
+| auth_permission             |
+| auth_user                   |
+| auth_user_groups            |
+| auth_user_user_permissions  |
+| category                    |
+| django_admin_log            |
+| django_content_type         |
+| django_migrations           |
+| django_session              |
+| school_article              |
+| school_category             |
+| school_user                 |
+| user                        |
++-----------------------------+
+mysql> select * from article;
