@@ -6,8 +6,21 @@
 		<title>School App</title>
 		{% load static %}
 		<link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		/>
 	</head>
 	<body>
+		<nav class="nav-container">
+			<ul>
+				<h2>Wellington School</h2>
+				<div>
+					<a href="#articles">Browse Articles</a>
+					<a>Login</a>
+				</div>
+			</ul>
+		</nav>
 		<!--Base - Requires Nav bar and footer-->
 		{% block content %} {% endblock %}
 	</body>
