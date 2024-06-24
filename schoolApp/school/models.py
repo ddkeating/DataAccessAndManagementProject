@@ -3,28 +3,21 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class Category(models.Model):
-    name = models.CharField(max_length=250, unique= True)    
-    
-
 class Article(models.Model):
-    
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    type = models.CharField(max_length=50)
-    name = models.CharField(max_length=50)
-    born = models.IntegerField(null=True, blank=True)
-    died = models.IntegerField(null=True, blank=True)
-    nationality = models.CharField(max_length=50, null=True, blank=True)
-    known_for = models.CharField(max_length=50, null=True, blank=True)
-    notable_work = models.TextField(null=True, blank=True)
-    about = models.TextField()
-    year = models.IntegerField(null=True, blank=True)
-    medium = models.CharField(max_length=50, null=True, blank=True)
-    dimensions = models.CharField(max_length=50, null=True, blank=True)
-    location = models.CharField(max_length=50, null=True, blank=True)
-    designed_by = models.CharField(max_length=50, null=True, blank=True)
-    developer = models.CharField(max_length=50, null=True, blank=True)
-
+    article_id = models.AutoField(primary_key=True, unique=True)
+    category = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    type = models.CharField(max_length=255)
+    born = models.IntegerField(null=True)
+    died = models.IntegerField(null=True)
+    nationality = models.CharField(max_length=255, null=True)
+    known_for = models.CharField(max_length=255, null=True)
+    notable_work = models.CharField(max_length=255, null=True)
+    about = models.TextField(max_length=65000)
+    year = models.CharField(max_length=10, null=True)
+    medium = models.CharField(max_length=255, null=True)
+    dimensions = models.CharField(max_length=255, null=True)
+    desndev = models.CharField(max_length=255, null=True)
     
 
 class User(models.Model):
