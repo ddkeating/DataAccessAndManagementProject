@@ -1,0 +1,29 @@
+h1 {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.searchContainer {
+    border: solid black 2px;
+    width: 20%;
+    margin: auto;
+    padding: 5px;
+}
+
+.SearchBar {
+    margin-left: 15px;
+}
+
+.SearchBtn {
+    margin-left: 15px;
+}
+
+div a {
+    text-align: center;
+    display: block;
+    padding: 5px;
+    margin: auto;
+    margin-top: 5px;
+    background-color: grey;
+    width: 10%;
+}
