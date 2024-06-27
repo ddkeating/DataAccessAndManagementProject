@@ -7,6 +7,10 @@
 		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+body {
+	background-color: whitesmoke;
+}
+
 /* General Styles */
 
 a:link {
@@ -45,11 +49,30 @@ a:hover {
 	font-size: 32px;
 }
 
-.nav-container > ul > div > a:last-child {
-	margin-left: 10px;
+.nav-links {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+}
+
+.nav-links > form > button {
+	border: none;
+	background-color: inherit;
+	color: white;
+	font-weight: bold;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.nav-links > form > button:hover {
+	text-decoration: underline;
 }
 
 /* Home Page */
+
+.show {
+	display: block;
+}
 
 .home-container {
 	padding: 20px 0;
@@ -63,9 +86,6 @@ a:hover {
 .home-header p {
 	margin-top: 10px;
 	font-size: 18px;
-}
-
-.article-container {
 }
 
 .result-controls {
@@ -100,6 +120,30 @@ a:hover {
 	cursor: pointer;
 }
 
+.filter-options {
+	margin: 10px 0;
+	display: none;
+}
+
+.filter-options > form {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	margin: 0 auto;
+	width: 300px;
+}
+
+.filter-options > form > label {
+	font-size: 24px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.filter-options > form > select {
+	padding: 5px;
+	font-size: 16px;
+}
+
 .search-bar {
 	background-color: white;
 	border-radius: 20px;
@@ -114,6 +158,10 @@ a:hover {
 	color: black;
 	font-size: 18px;
 	font-weight: bold;
+}
+
+.search-bar input:hover::placeholder {
+	color: black;
 }
 
 .search-bar > button {
@@ -133,4 +181,33 @@ a:hover {
 
 .fa-filter {
 	font-size: 24px;
+}
+
+/* Home Page - Articles */
+
+.article-container {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	align-items: center;
+	gap: 10px;
+}
+
+.article-container > a {
+	text-decoration: none;
+}
+
+.article-card {
+	background-color: rgb(253, 253, 253);
+	text-align: left;
+	width: 80vw;
+	padding: 30px 10px;
+	border-radius: 8px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+	transition: all 0.2s;
+	text-decoration: none;
+}
+
+.article-card:hover {
+	scale: 1.04;
 }

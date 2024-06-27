@@ -15,9 +15,22 @@
 		<nav class="nav-container">
 			<ul>
 				<h2>Wellington School</h2>
-				<div>
+				<div class="nav-links">
+					{% if user.is_authenticated %}
+					<a href="{% url 'articles:article_create' %}"
+						><i class="fa-plus fas"></i
+					></a>
+					{% endif %}
 					<a href="#articles">Browse Articles</a>
-					<a>Login</a>
+					{% if user.is_authenticated %}
+					<form method="post" action="{% url 'logout' %}">
+						{% csrf_token %}
+						<button type="submit">Logout</button>
+					</form>
+
+					{% else %}
+					<a href="{% url 'login' %}">Login</a>
+					{% endif %}
 				</div>
 			</ul>
 		</nav>
