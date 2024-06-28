@@ -14,14 +14,14 @@
 	<body>
 		<nav class="nav-container">
 			<ul>
-				<h2>Wellington School</h2>
+				<h2><a href="{% url 'articles:home' %}">Wellington School</a></h2>
 				<div class="nav-links">
 					{% if user.is_authenticated %}
 					<a href="{% url 'articles:article_create' %}"
 						><i class="fa-plus fas"></i
 					></a>
 					{% endif %}
-					<a href="#articles">Browse Articles</a>
+					<a href="{% url 'articles:home' %}#articles">Browse Articles</a>
 					{% if user.is_authenticated %}
 					<form method="post" action="{% url 'logout' %}">
 						{% csrf_token %}

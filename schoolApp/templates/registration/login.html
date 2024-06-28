@@ -1,36 +1,39 @@
 {% extends 'base.html' %} {% block content %}
 <div class="login-container">
-  <h3>Please Log In</h3>
-  {% if form.errors %}
-  <p class="error">
-    Your username and password didn't match. Please try again.
-  </p>
-  {% endif %} {% if next %} {% if user.is_authenticated %}
-  <p class="warning">
-    Your account doesn't have access to this page. To proceed, please login with
-    an account that has access.
-  </p>
-  {% else %}
-  <p class="warning">Please log in to see this page.</p>
-  {% endif %} {% endif %}
+	<h3 class="login-header">Log In</h3>
+	{% if form.errors %}
+	<p class="error">
+		Your username and password didn't match. Please try again.
+	</p>
+	{% endif %} {% if next %} {% if user.is_authenticated %}
+	<p class="warning">
+		Your account doesn't have access to this page. To proceed, please login with
+		an account that has access.
+	</p>
+	{% else %}
+	<p class="warning">Please log in to see this page.</p>
+	{% endif %} {% endif %}
 
-  <form method="post" action="{% url 'login' %}" class="login-form">
-    {% csrf_token %}
-    <div class="form-group">
-      <label for="id_username">{{ form.username.label }}</label>
-      {{ form.username }}
-    </div>
-    <div class="form-group">
-      <label for="id_password">{{ form.password.label }}</label>
-      {{ form.password }}
-    </div>
-    <button type="submit" class="btn btn-primary">Log in</button>
-    <input type="hidden" name="next" value="{{ next }}" />
-  </form>
+	<form method="post" action="{% url 'login' %}" class="login-form">
+		{% csrf_token %}
+		<div class="form-group">
+			<label for="id_username">{{ form.username.label }}</label>
+			{{ form.username }}
+		</div>
+		<div class="form-group">
+			<label for="id_password">{{ form.password.label }}</label>
+			{{ form.password }}
+		</div>
+		<div class="login-btn-container">
+			<button type="submit" class="btn btn-primary">Log in</button>
+		</div>
 
-  <div class="additional-links">
-    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-    <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a>.</p>
-  </div>
+		<input type="hidden" name="next" value="{{ next }}" />
+	</form>
+
+	<div class="additional-links">
+		<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+		<p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a>.</p>
+	</div>
 </div>
 {% endblock %}
