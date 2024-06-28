@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+{% if user.is_authenticated and perms.articles.add_article %}
+<div class="create-container">
+    <h1>Create Article</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit">Create Article</button>
+    </form>
+</div>
+{% else %}
+<div>
+    <h3 class="create-warning">
+        You are not logged in or do not have access to this page.<br />
+        Please log in to view this page.
+    </h3>
+</div>
+{% endif %} {% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="detail-container">
+    <div class="admin-container">
+    {% if user.is_authenticated and perms.articles.change_article %}
+        <a class="edit-btn" href="{% url 'articles:article_update' articles.pk %}">Update Article</a>
+    {% endif %}
+    {% if user.is_authenticated and perms.articles.delete_article %}
+        <a class="delete-btn" href="{% url 'articles:article_delete' articles.pk %}">Delete Article</a>
+    {% endif %}
+    </div>
+
+	<h2 class="detail-header">Article</h2>
+	<h3>{{ articles.name }}</h3>
+	<h3>{{ articles.born }} - {{ articles.died }}</h3>
+	<h3>{{ articles.category }} | {{ articles.type }}</h3>
+	<h3>{{ articles.known_for }}</h3>
+
+	<h3>Notable work: {{ articles.notable_work }}</h3>
+
+	<h3>Nationality: {{ articles.nationality }}</h3>
+	<h3>About:</h3>
+	<p>{{ articles.about }}</p>
+</div>
+{% endblock %}
