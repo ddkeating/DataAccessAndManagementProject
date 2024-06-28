@@ -22,3 +22,5 @@ Dallas_
 8. Change the password underneath the database section in the schoolApp/settings.py file to your MySQL connection password.
 
 #### You're now good to go!
+
+> To have groups and roles configured, please skip step 6 and 7 and run the schoolAppDump.sql file instead to have predefined roles such as tutors, admins and students.
