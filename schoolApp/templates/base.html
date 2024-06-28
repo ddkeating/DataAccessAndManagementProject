@@ -16,7 +16,7 @@
 			<ul>
 				<h2><a href="{% url 'articles:home' %}">Wellington School</a></h2>
 				<div class="nav-links">
-					{% if user.is_authenticated %}
+					{% if user.is_authenticated and perms.articles.add_article %}
 					<a href="{% url 'articles:article_create' %}"
 						><i class="fa-plus fas"></i
 					></a>
